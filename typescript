@@ -1,0 +1,133 @@
+Script started on Thu 13 Mar 2014 03:28:25 AM PDT
+]0;konsts@uw1-320-21:~[konsts@uw1-320-21 ~]$ valgrind --leak-check=full --track-origins=yes ./a.out[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg++ -g *.cpp[K
+]0;konsts@uw1-320-21:~[konsts@uw1-320-21 ~]$ g++ -g *.cppvalgrind --leak-check=full --track-origins=yes ./a.out
+==26838== Memcheck, a memory error detector
+==26838== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
+==26838== Using Valgrind-3.5.0 and LibVEX; rerun with -h for copyright info
+==26838== Command: ./a.out
+==26838== 
+No client with ID: 5678
+Not a valid transaction Checkout
+Error this is not a hard copy
+Not a valid transaction Checkout
+Error: The book code is not valid
+Not a valid transaction Checkout
+No client with ID: 1234
+Not a valid transaction Checkout
+Error: No book in the library
+Not a valid transaction Checkout
+Error: No book in the library
+Not a valid transaction Return  
+---------------------------------------------------------------------------
+Fiction:
+AVAIL AUTHOR                   TITLE                             YEAR
+ 5    Daheim Mary              Fowl Prey                         1991 
+ 5    Daheim Mary              The Alpine Advocate               1992 
+ 5    Daheim Mary              The Alpine Betrayal               1993 
+ 5    Forster E. M.            The Longest Journey               1922 
+ 5    Higgins Colin            Harold and Maude                  1971 
+ 5    Kerouac Jack             On the Road                       1955 
+ 5    Kerouac Jack             The Dharma Bums                   1958 
+ 5    Lawrence D. H.           Lady Chatterley's Lover           1928 
+ 5    Lawrence D. H.           Sons and Lovers                   1913 
+ 5    Lewis Sinclair           Babbitt                           1922 
+ 5    Muller Marcia            Edwin of the Iron Shoes           1977 
+ 5    Muller Marcia            Eye of the Storm                  1988 
+ 5    Pirsig Robert            Zen & the Art of Motorcycle Maint 1974 
+ 5    Tolkien J.R.R.           The Hobbit                        1937 
+ 5    Walker Alice             The Color Purple                  1982 
+ 5    Wright Richard           Native Son                        1940 
+
+Periodicals:
+AVAIL YEAR MO  TITLE
+ 1    2009  1  Vegetarian Times
+ 1    2009  2  Vegetarian Times
+ 1    2009  2  Communications of the ACM
+ 1    2009  3  Communications of the ACM
+ 1    2009  4  Communications of the ACM
+ 1    2009  5  Communications of the ACM
+ 1    2009  7  Communications of the ACM
+ 1    2009  7  Sigart Bulletin
+ 1    2010  1  Vegetarian Times
+ 1    2010  1  Communications of the ACM
+ 1    2010  2  Communications of the ACM
+ 1    2010  3  Communications of the ACM
+ 1    2010  12 Vegetarian Times
+ 1    2012  3  Communications of the ACM
+
+Youth Books:
+AVAIL AUTHOR                   TITLE                             YEAR
+ 5    Butterworth Emma Mac     As the Waltz was Ending           1982 
+ 5    Williams Jay             Danny Dunn & the Homework Machine 1959 
+ 5    Seuss Dr.                Horton hears a Who                1954 
+ 5    Dragonwagon Crescent     I Hate My Brother Harry           1983 
+ 5    Numeroff Laura           If you give a mouse a cookie      1985 
+ 5    Lobel Arnold             Martha the Movie Mouse            1966 
+ 5    Magnus Erica             Old Lars                          1984 
+ 5    Peterson Esther Alle     Penelope Gets Wheels              1982 
+ 5    Litterick Ian            Robots and Intelligent Machines   1984 
+ 5    Peet Bill                Smokey                            1962 
+ 5    Allen Jeffrey            The Secret Life of Mr. Weird      1982 
+ 5    Heide Florence Parry     Treehorn's Wish                   1984 
+ 5    Seuss Dr.                Yertle the Turtle                 1950 
+
+*** Patron ID = 1000  Mouse Minnie
+No transaction history 
+
+*** Patron ID = 1111  Mouse Mickey
+No transaction history 
+
+*** Patron ID = 5000  Moose Bullwinkle
+No transaction history 
+
+There are no Harold and Maude by Higgins Colin books in the library
+
+There are no Harold and Maude by Higgins Colin books in the library
+
+There are no Harold and Maude by Higgins Colin books in the library
+
+Error: Patron with id: 2222 can't return Harold and Maude
+
+*** Patron ID = 1000  Mouse Minnie
+Checkout  Muller Marcia       Edwin of the Iron Shoes            1977 
+Checkout  Muller Marcia       Eye of the Storm                   1988 
+Checkout  Higgins Colin       Harold and Maude                   1971 
+
+*** Patron ID = 1111  Mouse Mickey
+Checkout  2010  1 Communications of the ACM
+Checkout  Williams Jay        Danny Dunn & the Homework Machine  1959 
+Return    Williams Jay        Danny Dunn & the Homework Machine  1959 
+Checkout  2010  2 Communications of the ACM
+Checkout  2009  7 Communications of the ACM
+Checkout  Higgins Colin       Harold and Maude                   1971 
+
+*** Patron ID = 5000  Moose Bullwinkle
+Checkout  Williams Jay        Danny Dunn & the Homework Machine  1959 
+Return    Williams Jay        Danny Dunn & the Homework Machine  1959 
+Checkout  Heide Florence ParryTreehorn's Wish                    1984 
+Checkout  Magnus Erica        Old Lars                           1984 
+Checkout  Peet Bill           Smokey                             1962 
+Checkout  Seuss Dr.           Yertle the Turtle                  1950 
+Checkout  Higgins Colin       Harold and Maude                   1971 
+Checkout  Lewis Sinclair      Babbitt                            1922 
+Checkout  Higgins Colin       Harold and Maude                   1971 
+
+*** Patron ID = 8888  Pig Porky
+Checkout  Forster E. M.       The Longest Journey                1922 
+Checkout  Walker Alice        The Color Purple                   1982 
+Checkout  Wright Richard      Native Son                         1940 
+Checkout  Lawrence D. H.      Lady Chatterley's Lover            1928 
+Checkout  Higgins Colin       Harold and Maude                   1971 
+
+==26838== 
+==26838== HEAP SUMMARY:
+==26838==     in use at exit: 0 bytes in 0 blocks
+==26838==   total heap usage: 777 allocs, 777 frees, 43,697 bytes allocated
+==26838== 
+==26838== All heap blocks were freed -- no leaks are possible
+==26838== 
+==26838== For counts of detected and suppressed errors, rerun with: -v
+==26838== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 15 from 8)
+]0;konsts@uw1-320-21:~[konsts@uw1-320-21 ~]$ exit
+
+Script done on Thu 13 Mar 2014 03:28:44 AM PDT
